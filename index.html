@@ -1,0 +1,120 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>個人自我介紹</title>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="stylesheet" href="https://code.jquery.com/mobile/1.4.5/jquery.mobile-1.4.5.min.css">
+    <script src="https://code.jquery.com/jquery-1.11.3.min.js"></script>
+    <script src="https://code.jquery.com/mobile/1.4.5/jquery.mobile-1.4.5.min.js"></script>
+  </head>
+  <body>
+    <div data-role="page" id="main">
+      <div data-role="header">
+        <h1>個人自我介紹</h1>
+      </div>
+      <div data-role="content">
+        <h2>基本資訊</h2>
+        <p>姓名：阮文良</p>
+        <p>性別：男</p>
+        <p>年齡：24歲
+            電子郵件：luong01677866385.com
+        </p>
+      </div>
+      <div data-role="footer" data-position="fixed">
+        <div data-role="navbar">
+          <ul>
+            <li><a href="#main" data-icon="home">主頁</a></li>
+            <li><a href="#interests" data-icon="heart">興趣愛好</a></li>
+            <li><a href="#education" data-icon="book">學歷經歷</a></li>
+            <li><a href="#projects" data-icon="grid">作業列表</a></li>
+          </ul>
+        </div>
+      </div>
+    </div>
+    <div data-role="page" id="interests">
+      <div data-role="header">
+        <h1>個人自我介紹</h1>
+      </div>
+      <div data-role="content">
+        <h2>基本資訊</h2>
+        <ul>
+          <li>我喜歡玩遊戲，看風景，睡覺</li>
+          <li></li>
+          <li></li>
+        </ul>
+      </div>
+      <div data-role="footer" data-position="fixed">
+        <div data-role="navbar">
+          <ul>
+            <li><a href="#main" data-icon="home">主頁</a></li>
+            <li><a href="#interests" data-icon="heart">興趣愛好</a></li>
+            <li><a href="#education" data-icon="book">學歷經歷</a></li>
+            <li><a href="#projects" data-icon="grid">作業列表</a></li>
+          </ul>
+        </div>
+      </div>
+    </div>
+    <div data-role="page" id="education">
+      <div data-role="header">
+        <h1>個人自我介紹</h1>
+      </div>
+      <div data-role="content">
+        <h2>我的學歷</h2>
+        <ul>
+          <li>2023 在讀大學</li>
+          <li></li>
+        </ul>
+      </div>
+      <div data-role="footer" data-position="fixed">
+        <div data-role="navbar">
+          <ul>
+            <li><a href="#main" data-icon="home">主頁</a></li>
+            <li><a href="#interests" data-icon="heart">興趣愛好</a></li>
+            <li><a href="#education" data-icon="book">學歷經歷</a></li>
+            <li><a href="#projects" data-icon="grid">作業列表</a></li>
+          </ul>
+        </div>
+      </div>
+    </div>
+    <div data-role="page" id="projects">
+      <div data-role="header">
+        <h1>作業列表</h1>
+      </div>
+      <div data-role="content">
+        <h2>我的作業</h2>
+        <select id="select-project" data-native-menu="false">
+            <option value="#">請選擇</option>
+            <option value="https://heji00.github.io/hw1/">作業1</option>
+            <option value="https://heji00.github.io/hw2/">作業2</option>
+            <option value="https://heji00.github.io/hw3/">作業3</option>
+            <option value="https://heji00.github.io/hw4/">作業4</option>
+            <option value="https://heji00.github.io/hw5/">作業5</option>
+            <option value="https://heji00.github.io/hw6/">作業6</option>
+            <option value="https://heji00.github.io/hw7/">作業7</option>
+            <option value="https://heji00.github.io/hw8/">作業8</option>
+        </select>
+        <div id="iframe-container"></div>
+      </div>
+      <div data-role="footer" data-position="fixed">
+        <div data-role="navbar">
+          <ul>
+            <li><a href="#main" data-icon="home">主頁</a></li>
+            <li><a href="#interests" data-icon="heart">興趣愛好</a></li>
+            <li><a href="#education" data-icon="book">學歷經歷</a></li>
+            <li><a href="#projects" data-icon="grid">作業列表</a></li>
+          </ul>
+        </div>
+      </div>
+    </div>
+    <script>
+      $(document).on("pagecreate", "#projects", function() {
+        $("#select-project").on("change", function() {
+          var url = $(this).val();
+          var iframe = "<iframe src='" + url + "'></iframe>";
+          $("#iframe-container").html(iframe);
+        });
+      });
+    </script>
+  </body>
+</html>
